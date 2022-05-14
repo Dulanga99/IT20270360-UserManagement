@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Querys>
+
+	
+		<query id="insert_userdetails">
+        <![CDATA[
+			insert into user( name, address, phone,  email, acc)
+			values (?, ?, ?, ?, ?)			
+        ]]>
+	</query>
+	
+	<query id="all_userdetails">
+         <![CDATA[        
+			select ID, name, address, phone,  email, acc
+			from user
+        ]]>
+	</query>
+	
+	<query id="userdetails_by_id">
+         <![CDATA[
+         	select ID, name, address, phone,  email, acc
+			from user   
+			where ID = ?
+        ]]>
+	</query>
+	
+	<query id="remove_userdetails">
+         <![CDATA[        
+            delete from user where ID = ?
+        ]]>
+	</query>
+	
+		<query id="update_userdetails">
+         <![CDATA[        
+			update user as g 
+			set g.name = ?, g.address = ?, g.phone = ?,  g.email = ?, g.acc = ? 
+			where g.ID = ?
+        ]]>
+	</query>
+	
+</Querys>
